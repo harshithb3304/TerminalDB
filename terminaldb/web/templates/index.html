@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>terminalDB</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">terminal<span>DB</span></a>
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="9" cy="9" r="6"/><path d="m15 15 4 4"/>
+      </svg>
+      <input
+        id="search"
+        type="text"
+        placeholder="Search history or ask in plain English… (Enter for AI)"
+        autocomplete="off"
+        spellcheck="false"
+      />
+    </div>
+    <div class="stats" id="stats">Loading…</div>
+    <button class="btn-ghost" id="btn-refresh" title="Refresh">↺ Refresh</button>
+  </header>
+
+  <main>
+    <div id="error-banner" class="error-banner hidden"></div>
+
+    <section id="ai-section" class="suggestions-section hidden">
+      <div class="suggestions-header">
+        <span class="spark">✦</span> AI-SUGGESTED COMMANDS
+      </div>
+      <div id="suggestions-list"></div>
+    </section>
+
+    <div id="grid" class="grid"></div>
+
+    <div id="empty" class="empty hidden">
+      <div class="empty-icon">🗄️</div>
+      <div class="empty-title" id="empty-title">No commands yet</div>
+      <div class="empty-sub" id="empty-sub">
+        Run any command in your terminal — tdb will ask if you want to save it.
+      </div>
+    </div>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
